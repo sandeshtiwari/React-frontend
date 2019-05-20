@@ -55,16 +55,16 @@ class EditProfile extends Component {
     }
 
     if(name.length === 0){
-      this.setState({error: "Name is required!"});
+      this.setState({error: "Name is required!", loading: false});
       return false;
     }
     // email@domain.com
     if(!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)){
-      this.setState({error: "A valid email is required"});
+      this.setState({error: "A valid email is required", loading: false});
       return false;
     }
     if(password.length >=1 && password.length <= 5){
-      this.setState({error: "Passwords must be at least 6 characters long!"});
+      this.setState({error: "Passwords must be at least 6 characters long!", loading: false});
       return false;
     }
     return true;
